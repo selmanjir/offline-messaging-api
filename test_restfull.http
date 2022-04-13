@@ -1,0 +1,31 @@
+@BASE_URL = http://localhost:4112/
+
+GET {{BASE_URL}}login
+###
+POST {{BASE_URL}}login-post
+Content-Type: application/json
+
+    {
+        "email" : "selmanjircan@gmail.com",
+        "password" : "admin123"
+    }
+
+###
+POST {{BASE_URL}}logout
+
+###
+GET {{BASE_URL}}register
+###
+
+POST {{BASE_URL}}register-post
+Content-Type: application/json
+
+{
+    "username" : "Test",
+    "full_name" : "Test",
+    "email" : "Test@gmail.com",
+    "password" : "admin123",
+    "repassword" : "admin123"
+    
+
+}
