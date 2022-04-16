@@ -1,18 +1,34 @@
 'use strict';
-const { Model , DataTypes} = require('sequelize');
+const {Sequelize, Model} = require('sequelize');
 const sequelize = require('../config/db');
 
   class user extends Model {}
   
   user.init({
-    username: DataTypes.STRING,
-    full_name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    isDeleted: DataTypes.BOOLEAN,
-    isActive: DataTypes.BOOLEAN,
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE
+    username: {
+      type : Sequelize.STRING
+    },
+    full_name: {
+      type : Sequelize.STRING
+    },
+    email: {
+      type : Sequelize.STRING
+    },
+    password: {
+      type : Sequelize.STRING
+    },
+    isDeleted: {
+      type : Sequelize.BOOLEAN
+    },
+    isActive: {
+      type : Sequelize.BOOLEAN
+    },
+    createdAt: {
+      type : Sequelize.DATE
+    },
+    updatedAt: {
+      type : Sequelize.DATE
+    }
   }, {
     sequelize,
     modelName: 'user',

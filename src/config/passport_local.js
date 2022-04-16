@@ -58,16 +58,6 @@ module.exports =  (passport) =>  {
                 { where: { id: id } },
                 
             )
-            user.update(
-                {
-                    email: user.email,
-                    username: user.username,
-                    full_name: user.full_name,
-                    password: user.password,
-                    createdAt: user.createdAt,
-                    updatedAt: user.updatedAt,
-                },
-            )
             done(null, user);
         });
     

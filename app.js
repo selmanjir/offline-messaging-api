@@ -12,6 +12,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const passport = require('passport');
 
+const  assosications = require('./src/models/assosications');
 
 const myStore = new SequelizeStore({
 	db: db_connect,
@@ -31,11 +32,10 @@ app.use(session( {
 
 myStore.sync();
 
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 app.use(flash());
-
-
-
-
 
 app.use(passport.initialize());
 
@@ -47,19 +47,10 @@ app.use((req, res, next ) => {
 	next();
 })
 
-app.use(express.json());
 
-app.use(express.urlencoded({extended : true }));
 
 app.use('/', require('./src/routes/routes'));
 
-
-
-
-
-app.get('/', (req, res) => {
-    res.status(200).json({'mesaj' : 'hoşgeldiniz'});
-})
 
 
 

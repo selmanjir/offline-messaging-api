@@ -108,24 +108,10 @@ const passwordValidate  = {
     },
     
 }
-const loginValidate = {
-    custom : {
-        options : ({req, res}) => {
-            if (res.locals.error) {
-                console.log(res.locals.error);
-                const err = res.locals.error
-                return Promise.reject(res.json("başarısız" + " " + err))
-            }
-            else return true
-        }
-    }
-}
-
 
 
 
 module.exports = {
     registerValidate,
-    passwordValidate,
-    loginValidate
+    passwordValidate
 }
