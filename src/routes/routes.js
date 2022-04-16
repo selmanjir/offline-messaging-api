@@ -38,10 +38,10 @@ router.get('/api/delete-message/:id', Authenticated, delete_message)
 
 //Block user, to the selected username
 router.get('/api/block-to/:username', Authenticated, block)
-//Block list
+//Unblock a user
 router.get('/api/unblock-to/:username', Authenticated, unblock)
-//Unblock
-router.get('/api/block-list/', Authenticated, blockList)
+//Block list
+router.get('/api/block-list', Authenticated, blockList)
 
 
 
