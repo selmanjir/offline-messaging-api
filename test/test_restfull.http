@@ -1,0 +1,87 @@
+@BASE_URL = http://localhost:4112/api/
+
+
+###
+//Login
+POST {{BASE_URL}}login-post
+Content-Type: application/json
+
+    {
+        "email" : "selmanjircan@gmail.com",
+        "password" : "admin12345"
+    }
+
+###
+//logout
+POST {{BASE_URL}}logout
+
+###
+//Check-auth
+POST {{BASE_URL}}check-auth
+
+###
+//Register
+POST {{BASE_URL}}register-post
+Content-Type: application/json
+
+{
+    "username" : "enesdemir",
+    "full_name" : "Enes DEMİR",
+    "email" : "enesdem@gmail.com",
+    "password" : "admin123",
+    "repassword" : "admin123"
+    
+
+}
+###
+//Forget password
+POST {{BASE_URL}}forget-password/selmanjircan@gmail.com
+###
+
+//New-password page when click link in mail
+GET {{BASE_URL}}new-password/1/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzZWxtYW5qaXJjYW5AZ21haWwuY29tIiwiaWF0IjoxNjUwMTEyODQxLCJleHAiOjE2NTAxOTkyNDF9.MP7Wr2rtY4aEOT7vxQt0yzuXlLPhdSNvvMIdy81v8j8
+###
+//New-password
+POST {{BASE_URL}}new-password/1/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzZWxtYW5qaXJjYW5AZ21haWwuY29tIiwiaWF0IjoxNjUwMTEyODQxLCJleHAiOjE2NTAxOTkyNDF9.MP7Wr2rtY4aEOT7vxQt0yzuXlLPhdSNvvMIdy81v8j8
+Content-Type: application/json
+
+{
+    "password" : "admin1234",
+    "repassword" : "admin1234"
+    
+
+}
+###
+//Message to the selected username
+POST {{BASE_URL}}message-to/selmanjir
+Content-Type: application/json
+
+{
+    "text" : "Message to Selman"
+}
+
+###
+//Messages
+GET {{BASE_URL}}messages
+
+###
+//Messages, to the selected username
+GET {{BASE_URL}}messages-with/selmanjir
+
+###
+//Delete message, to the selected id
+GET {{BASE_URL}}delete-message/1
+
+###
+//Block user, to the selected username
+GET {{BASE_URL}}block-to/abdulskaya
+
+
+###
+//Block list
+GET {{BASE_URL}}block-list
+
+
+###
+//Unblock
+GET {{BASE_URL}}unblock-to/abdulskaya

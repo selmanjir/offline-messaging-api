@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "99fc2f34-493c-4853-8dad-a90f6300096e",
+		"name": "Offline-message-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\" : \"selmanjircan@gmail.com\",\r\n        \"password\" : \"admin12345\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4112/api/login-post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"login-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4112/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check-auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4112/api/check-auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"check-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Test\",\r\n    \"full_name\" : \"Test\",\r\n    \"email\" : \"test@gmail.com\",\r\n    \"password\" : \"admin123\",\r\n    \"repassword\" : \"admin123\"\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4112/api/register-post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"register-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forget password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4112/api/forget-password/selmanjircan@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"forget-password",
+						"selmanjircan@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New password Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4112/api/new-password/1/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzZWxtYW5qaXJjYW5AZ21haWwuY29tIiwiaWF0IjoxNjUwMTEyODQxLCJleHAiOjE2NTAxOTkyNDF9.MP7Wr2rtY4aEOT7vxQt0yzuXlLPhdSNvvMIdy81v8j8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"new-password",
+						"1",
+						"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzZWxtYW5qaXJjYW5AZ21haWwuY29tIiwiaWF0IjoxNjUwMTEyODQxLCJleHAiOjE2NTAxOTkyNDF9.MP7Wr2rtY4aEOT7vxQt0yzuXlLPhdSNvvMIdy81v8j8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\" : \"admin12345\",\r\n    \"repassword\" : \"admin12345\"\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4112/api/new-password/1/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzZWxtYW5qaXJjYW5AZ21haWwuY29tIiwiaWF0IjoxNjUwMTEyODQxLCJleHAiOjE2NTAxOTkyNDF9.MP7Wr2rtY4aEOT7vxQt0yzuXlLPhdSNvvMIdy81v8j8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"new-password",
+						"1",
+						"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzZWxtYW5qaXJjYW5AZ21haWwuY29tIiwiaWF0IjoxNjUwMTEyODQxLCJleHAiOjE2NTAxOTkyNDF9.MP7Wr2rtY4aEOT7vxQt0yzuXlLPhdSNvvMIdy81v8j8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\" : \"Message to Selman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4112/api/message-to/selmanjir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"message-to",
+						"selmanjir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4112/api/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message with any user ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4112/api/messages-with/selmanjir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"messages-with",
+						"selmanjir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete message",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4112/api/delete-message/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"delete-message",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4112/api/block-to/abdulskaya",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"block-to",
+						"abdulskaya"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4112/api/block-list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"block-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unblock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4112/api/unblock-to/abdulskaya",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4112",
+					"path": [
+						"api",
+						"unblock-to",
+						"abdulskaya"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
