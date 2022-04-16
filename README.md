@@ -29,15 +29,18 @@
 
 ```
 npm i
+
 ```
 ## Migrating
 
 ```
 cd src
+
 ```
 
 ```
 sequelize db:migrate
+
 ```
 
 ## Database Config
@@ -56,6 +59,7 @@ config.json
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
+  
 ```
 
 
