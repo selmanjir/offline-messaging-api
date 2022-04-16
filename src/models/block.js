@@ -1,33 +1,24 @@
 'use strict';
-const User = require('./user');
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class block extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      block.belongsTo(User, { foreignKey: 'block_by',});
-      block.belongsTo(User, { foreignKey: 'block_to',});
-    }
-  }
+const { Sequelize, Model } = require('sequelize');
+const sequelize = require('../config/db');
+
+  class block extends Model {}
+
   block.init({
     block_by: {
-      DataTypes : INTEGER,
+      type : Sequelize.INTEGER,
       references : {model : 'users', key : 'id'}
     },
     block_to: {
-      DataTypes : INTEGER,
+      type : Sequelize.INTEGER,
       references : {model : 'users', key : 'id'}
     },
-    isActive: DataTypes.BOOLEAN
+    isActive: {
+      type : Sequelize.BOOLEAN,
+    }
   }, {
     sequelize,
     modelName: 'block',
   });
-  return block;
-};
+
+  module.exports = block;

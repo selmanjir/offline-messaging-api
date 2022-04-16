@@ -1,30 +1,20 @@
 'use strict';
-const User = require('./user');
-const Conversation = require('./conversation');
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
 
-  class participants extends Model {
+const { Sequelize, Model } = require('sequelize');
+const sequelize = require('../config/db');
 
-    static associate(models) {
-      User.belongsToMany(Conversation, { through: participants, foreignKey: 'user_id' });
-      Conversation.belongsToMany(User, { through: participants, foreignKey: 'conversation_id' });
-    }
-  
-  }
+  class participants extends Model {}
   
   participants.init({
     conversation_id: {
-      DataTypes : INTEGER,
+      type : Sequelize.INTEGER,
       references : {
         model : 'conversations',
         key : 'id'
       }
     },
-    user_id: {
-      DataTypes : INTEGER,
+    participant_user_id: {
+      type : Sequelize.INTEGER,
       references : {
         model : 'users',
         key : 'id'
@@ -34,5 +24,5 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'participants',
   });
-  return participants;
-};
+
+module.exports = participants;
